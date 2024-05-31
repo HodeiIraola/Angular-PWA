@@ -10,7 +10,22 @@ import { Component } from '@angular/core';
 })
 export class HolaMundoComponent {
   titulo : string = "Hola Mundo desde el componente HolaMundoComponent";
-  color : String = "blue";
+  color : string = "blue";
   //Opcional el encapsulamiento
-  public alumnos : String[] = ["David","Inigo","Fatima"]
+  public alumnos : string[] = ["David","Inigo","Fatima"];
+
+  mostrarDiv : boolean = false;
+
+  alternarDivs(){
+    this.mostrarDiv = !this.mostrarDiv;
+  }
+
+  agregarAlumno(txtAlmuno : HTMLInputElement){
+    this.alumnos.push(txtAlmuno.value);
+    txtAlmuno.value = "";
+  }
+
+  /*agregarAlumno(almuno : string){
+    this.alumnos.push(almuno);
+  }*/
 }
